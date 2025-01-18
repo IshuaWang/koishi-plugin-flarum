@@ -154,7 +154,7 @@ export function apply(ctx: Context, config:Config) {
 
   // 发帖命令
   ctx.command('post <title:string> <content:string>', '向论坛发帖')
-  .option('tag', '-t <tag:string>', {fallback: 'auto'})
+  .option('tag', '-t [tag:string]', {fallback: 'auto'})
   .alias('发帖')
   .action(async ({ session, options }, title, content) => {
     // 机器人论坛ID
