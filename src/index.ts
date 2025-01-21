@@ -107,7 +107,10 @@ export function apply(ctx: Context, config:Config) {
       }, ['name', 'fname']);
     }
     // console.log(info);
-    const {name, fname} =  info[0];
+    let name, fname;
+    if(info.length != 0) {
+      ({name, fname}  =  info[0]);
+    }
     return `群名：${name??'无'} 论坛名：${fname??'无'}`;
   });
 
@@ -168,7 +171,7 @@ export function apply(ctx: Context, config:Config) {
     }, ['fid']);
     // console.log(getID);
     // 取第一个
-    if(!getID[0].fid) {
+    if(getID.length != 0) {
       fid = getID[0].fid;
     }
 
